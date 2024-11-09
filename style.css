@@ -219,3 +219,163 @@ body {
     height: 2px;
     background: linear-gradient(to right, transparent, var(--main-color), transparent);
 }
+/* KEYFRAMES ANIMATION */
+
+/* Skill Bar Animation */
+@keyframes skillBarFill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Skill Column Hover Animation */
+@keyframes skillColumnPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255,0,0,0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255,0,0,0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255,0,0,0.3);
+    }
+}
+
+/* Text Glitch Animation */
+@keyframes glitch {
+    2%, 64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    4%, 60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+/* Skill Progress Bounce */
+@keyframes skillProgressBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Skill Section Background Pulse */
+@keyframes backgroundPulse {
+    0% {
+        background-color: var(--bg-color);
+    }
+    50% {
+        background-color: rgba(255,0,0,0.1);
+    }
+    100% {
+        background-color: var(--bg-color);
+    }
+}
+
+/* Text Reveal Animation */
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skill Column Entrance Animation */
+@keyframes skillColumnEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add these animations to specific elements */
+.skills-column {
+    animation: skillColumnEntrance 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+.skills-column:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.skills-column:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.skills .heading {
+    animation: textReveal 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+.progress {
+    animation: skillProgressBounce 1s ease infinite;
+    animation-delay: 1.5s;
+}
+
+.skills-column:hover {
+    animation: skillColumnPulse 1s ease infinite;
+}
+
+.skills-content .progress .bar span {
+    animation: skillBarFill 2s ease-in-out forwards;
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+    .skills-column {
+        animation: skillColumnEntrance 0.7s ease forwards;
+    }
+}
+
+/* Glitch Text Effect for Headings */
+.glitch-text {
+    position: relative;
+    color: var(--main-color);
+    animation: glitch 1s linear infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch 5s infinite linear alternate-reverse;
+}
