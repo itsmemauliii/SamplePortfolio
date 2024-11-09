@@ -94,8 +94,8 @@ function setupProjectFilter() {
 // Contact Form Validation
 function setupContactForm() {
     const form = document.querySelector('.contact form');
-    const nameInput = form.querySelector('input[placeholder="Full Name"]');
-    const emailInput = form.querySelector('input[placeholder="Email Address"]');
+    const nameInput = form.querySelector('input[placeholder="Your Name"]');
+    const emailInput = form.querySelector('input[placeholder="Your Email"]');
     const messageInput = form.querySelector('textarea[placeholder="Your Message"]');
 
     form.addEventListener('submit', (e) => {
