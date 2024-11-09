@@ -1,332 +1,619 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Potfolio</title>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
 
-    <link rel="stylesheet" href="style.css">
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #421111;
+    --text-color: #ededed;
+    --main-color: #f01000;
+}
 
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
 
-<body>
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
 
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Portfolio<span class="animate" style="--i:1;"></span></a>
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
 
-        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+.header.sticky {
+    background: var(--bg-color);
+}
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#projects">Projects</a>
-            <span class="active-nav"></span>
-            <span class="animate" style="--i:2;"></span>
-        </nav>
-    </header>
+.logo {
+    position: relative;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
 
-    <!-- home section design -->
-    <section class="home show-animate" id="home">
-        <div class="home-content">
-            <h1>Hi, I'm <span>Mauli Patel</span><span class="animate" style="--i:2;"></span></h1>
-            <div class="text-animate">
-                <h3>Data Science Professional</h3>
-                <span class="animate" style="--i:3;"></span>
-            </div>
-            <p>
-            <ul>
-                <li>Passionate about technology and solving real-world problems through data.</li>
-                <li>Strong foundation in Python, SQL, and machine learning.</li>
-                <li>Skilled in analytical thinking and quick adaptability.</li>
-                <li>Committed to continuous learning and professional growth.</li>
-            </ul>
-                <span class="animate" style="--i:4;"></span>
-            </p>
+.navbar {
+    position: relative;
+}
 
-            <div class="btn-box">
-                <a href="#" class="btn">Resume</a>
-                <a href="#" class="btn">Let's Connect!</a>
-                <span class="animate" style="--i:5;"></span>
-            </div>
-        </div>
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
 
-        <div class="home-sci">
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-            <a href="#"><i class='bx bxl-whatsapp'></i></a>
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-            <span class="animate" style="--i:6;"></span>
-        </div>
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
 
-        <div class="home-imgHover"></div>
-        <span class="animate home-img" style="--i:7;"></span>
-    </section>
+#menu-icon {
+    position: relative;
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
 
-    <!-- about section design -->
-    <section class="about" id="about">
-        <h2 class="heading">About <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
+/* Home Section Styling */
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background: url('./images/home.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
-        <div class="about-img">
-            <img src="./images/about.jpg" alt="">
-            <span class="circle-spin"></span>
-            <span class="animate scroll" style="--i:2;"></span>
-        </div>
+.home-content {
+    max-width: 60rem;
+    z-index: 99;
+}
 
-        <div class="about-content">
-           <h3>Hi there! Glad to see you here.<span class="animate scroll" style="--i:3;"></span></h3>
-           <p>Hello! Mauli Patel here. I am a passionate Data Science professional with hands-on experience in Python, SQL, machine learning, and data visualization.<br>
-              Currently pursuing a Master’s in Big Data and Analytics at St. Xavier's College, I specialize in advanced data analytics and data science applications. I hold a Bachelor's in Information Technology from GLS University, where I completed a capstone project in human-computer interaction.<br>
-              I'm also the founder of Tech Data Hub, a platform dedicated to sharing resources for data science enthusiasts, with a growing community of over 260 followers.<br>
-              My journey includes roles as a Microsoft Learn Student Ambassador, Google Women Techmakers Member, and Google Cloud Innovator, actively contributing to tech communities.<br>
-              Eager to drive innovation and create impactful insights through data science, I am committed to continuous learning and growth.
-           </p>
-                <span class="animate scroll" style="--i:4;"></span>
-            </p>
+.home-content h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 5.12rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
 
-            <div class="btn-box btns">
-                <a href="#contact" class="btn">Contact Me</a>
-                <span class="animate scroll" style="--i:5;"></span>
-            </div>
-        </div>
-    </section>
+.home-content .text-animate h3 {
+    font-size: 3.05rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+}
 
-    <!-- education section design -->
-    <section class="education" id="education">
-        <h2 class="heading">My <span>Journey</span><span class="animate scroll" style="--i:1;"></span></h2>
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
 
-        <div class="education-row">
-            <div class="education-column">
-                <h3 class="title">Education<span class="animate scroll" style="--i:2;"></span></h3>
+.home-content p ul {
+    padding-left: 2rem;
+}
 
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> 2017 - 2018</div>
-                           <h3>Master of Science in Big Data and Analytics - St. Xavier's College, Ahmedabad</h3>
-                            <p>Pursuing advanced studies in data analytics, specializing in data science and machine learning applications. Expected to graduate in June 2026, gaining expertise in handling large datasets and developing analytical solutions for real-world challenges.</p>
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
 
-                            <h3>Bachelor of Science in Information Technology - GLS University, Ahmedabad</h3>
-                            <p>Graduated in April 2024. Completed a capstone project on device control via hand gestures, honing skills in human-computer interaction and strengthening my foundation in data science and technology.</p>
-                        </div>
-                    </div>
-                    <span class="animate scroll" style="--i:3;"></span>
-                </div>
-            </div>
-    </section>
-    <!-- experience section design -->
-    <section class="experience" id="experience">
-        <h2 class="heading">My <span>Experience</span><span class="animate scroll" style="--i:1;"></span></h2>
-        <div class="education-column">
-    <h3 class="title">Experience<span class="animate scroll" style="--i:5;"></span></h3>
+.btn-box .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
 
-    <div class="education-box">
-        <div class="education-content">
-            <div class="content">
-                <div class="year"><i class='bx bxs-calendar'></i> Mar 2024 - Present</div>
-                <h3>Founder & Content Creator - Tech Data Hub</h3>
-                <p>Established Tech Data Hub to deliver data science resources, amassing over 260 followers. 
-                   Developed content strategies, shared practical insights, and created free resources to support the data science community.</p>
-            </div>
-        </div>
-    </div>
+.home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
 
-    <div class="education-box">
-        <div class="education-content">
-            <div class="content">
-                <div class="year"><i class='bx bxs-calendar'></i> Oct 2024 - Present</div>
-                <h3>Program Participant - Infosys Springboard, Pragati: Path to Future Program</h3>
-                <p>Participated in a 12-week mentorship program focused on empowering women in technology through 
-                   leadership training and skill development, gaining insights and experience in tech leadership.</p>
-            </div>
-        </div>
-    </div>
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    transition: .5s;
+}
 
-    <div class="education-box">
-        <div class="education-content">
-            <div class="content">
-                <div class="year"><i class='bx bxs-calendar'></i> Microsoft Learn Student Ambassador, Google Women Techmakers Member, Google Cloud Innovator</div>
-                <h3>Various Community Roles</h3>
-                <p>Actively engaged in prominent tech communities to foster engagement, share knowledge, and develop 
-                   leadership skills in data science and technology.</p>
-            </div>
-        </div>
-    </div>
-         <span class="animate scroll" style="--i:3;"></span>
-            </div>
-    </section>
-    <!-- skills section design -->
-       <section class="skills" id="skills">
-    <h2 class="heading">My <span>Skills</span></h2>
+/* About Section Styling */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
 
-    <div class="skills-row">
-        <!-- Programming & Data Science Skills Column -->
-        <div class="skills-column">
-            <h3 class="title">Programming & Data Science</h3>
-            <div class="skills-box">
-                <div class="skills-content">
-                    <div class="progress">
-                        <h3>Python <span>90%</span></h3>
-                        <div class="bar"><span style="width: 90%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>SQL <span>85%</span></h3>
-                        <div class="bar"><span style="width: 85%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Machine Learning <span>80%</span></h3>
-                        <div class="bar"><span style="width: 80%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Data Visualization <span>75%</span></h3>
-                        <div class="bar"><span style="width: 75%;"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+.heading {
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
 
-        <!-- Data Tools & Technical Skills Column -->
-        <div class="skills-column">
-            <h3 class="title">Data Tools & Technical Skills</h3>
-            <div class="skills-box">
-                <div class="skills-content">
-                    <div class="progress">
-                        <h3>Pandas <span>85%</span></h3>
-                        <div class="bar"><span style="width: 85%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>NumPy <span>80%</span></h3>
-                        <div class="bar"><span style="width: 80%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Jupyter Notebook <span>75%</span></h3>
-                        <div class="bar"><span style="width: 75%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Git Version Control <span>70%</span></h3>
-                        <div class="bar"><span style="width: 70%;"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    <!-- Additional Skills Row -->
-    <div class="skills-row">
-        <!-- Leadership & Soft Skills Column -->
-        <div class="skills-column">
-            <h3 class="title">Leadership & Soft Skills</h3>
-            <div class="skills-box">
-                <div class="skills-content">
-                    <div class="progress">
-                        <h3>Project Management <span>80%</span></h3>
-                        <div class="bar"><span style="width: 80%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Team Leadership <span>75%</span></h3>
-                        <div class="bar"><span style="width: 75%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Problem Solving <span>85%</span></h3>
-                        <div class="bar"><span style="width: 85%;"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+.about-img img {
+    width: 90%;
+        border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
 
-        <!-- Additional Technical Skills Column -->
-        <div class="skills-column">
-            <h3 class="title">Additional Technical Skills</h3>
-            <div class="skills-box">
-                <div class="skills-content">
-                    <div class="progress">
-                        <h3>DBMS <span>75%</span></h3>
-                        <div class="bar"><span style="width: 75%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>NoSQL <span>70%</span></h3>
-                        <div class="bar"><span style="width: 70%;"></span></div>
-                    </div>
-                    <div class="progress">
-                        <h3>Oracle Database <span>65%</span></h3>
-                        <div class="bar"><span style="width: 65%;"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- contact section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
+.about-content {
+    text-align: center;
+}
 
-        <form action="#">
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <span class="focus"></span>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Email" required>
-                    <span class="focus"></span>
-                </div>
+.about-content h3 {
+    font-size: 2.6rem;
+}
 
-                <span class="animate scroll" style="--i:3;"></span>
-            </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
-                    <span class="focus"></span>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Email Subject" required>
-                    <span class="focus"></span>
-                </div>
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+/* Education Section Styling */
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 5rem 9% 2rem;
+    background: var(--second-bg-color);
+}
 
-                <span class="animate scroll" style="--i:5;"></span>
-            </div>
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
 
-            <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <span class="focus"></span>
+.education-row .education-column {
+    flex: 1 1 40rem;
+}
 
-                <span class="animate scroll" style="--i:7;"></span>
-            </div>
+.education-column .title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
 
-            <div class="btn-box btns">
-                <button type="submit" class="btn">Submit</button>
+.education-column .education-box {
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
 
-                <span class="animate scroll" style="--i:9;"></span>
-            </div>
-        </form>
-    </section>
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+}
 
-    <!-- footer design -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2024 | Designed and
-                Maintenance by Mauli Patel | All
-                Rights Reserved</p>
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
 
-            <span class="animate scroll" style="--i:1;"></span>
-        </div>
+.education-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
 
-        <div class="footer-iconTop">
-            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transform: skew(45deg) translateX(-100%);
+    transition: .5s;
+    pointer-events: none;
+}
 
-            <span class="animate scroll" style="--i:3;"></span>
-        </div>
-    </footer>
+.education-content .content:hover::before {
+    transform: skew(45deg) translateX(100%);
+}
 
+.education-content .content .year {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
 
-    <script src="script.js"></script>
-</body>
+.education-content .content .year i {
+    padding-right: .5rem;
+}
 
-</html>
+.education-content .content h3 {
+    font-size: 2rem;
+}
+
+.education-content .content p {
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+/* Experience Section Styling */
+.experience .education-column .education-box {
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
+
+.experience .education-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+}
+
+.experience .education-content .content .year {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.experience .education-content .content h3 {
+    font-size: 2rem;
+}
+
+.experience .education-content .content p {
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+
+/* Skills Section Styling */
+.skills {
+    background: var(--second-bg-color);
+    padding-bottom: 7rem;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-column {
+    flex: 1 1 40rem;
+}
+
+.skills-column .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skills-content .progress {
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+}
+
+.skills-content .progress .bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+/* Contact Section Styling */
+.contact {
+    padding-bottom: 7rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact .input-field {
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact .input-field input,
+.contact .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contact .input-field input::placeholder,
+.contact .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact .input-field input:focus~.focus,
+.contact .input-field input:valid~.focus,
+.contact .textarea-field textarea:focus~.focus,
+.contact .textarea-field textarea:valid~.focus {
+    width: 100%;
+}
+
+.contact .textarea-field {
+    margin: .8rem 0 2.7rem;
+}
+
+.contact .btn-box.btns .btn {
+    cursor: pointer;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover {
+    color: var(--bg-color);
+}
+
+/* Animations */
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+        z-index: 98;
+}
+
+.animate.home-img {
+    width: 50%;
+}
+
+/* Keyframes Animation */
+@keyframes homeBgText {
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        background: var(--bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        z-index: 1;
+        transition: .25s ease;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+    }
+
+    .home-imgHover {
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 4rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
