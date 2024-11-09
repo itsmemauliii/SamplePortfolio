@@ -6,20 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <!-- header design -->
     <header class="header">
-        <a href="#" class="logo">Portfolio<span class="animate" style="--i:1;"></span></a>
-
-        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
-
+        <a href="#" class="logo">Portfolio</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -29,214 +23,69 @@
             <a href="#certificates">Certificates</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
-
             <span class="active-nav"></span>
-            <span class="animate" style="--i:2;"></span>
         </nav>
     </header>
 
-    <!-- home section design -->
-    <section class="home show-animate" id="home">
-        <!-- Home section content remains the same as in previous version -->
-        <!-- (I'll omit for brevity, but you would keep the entire existing home section) -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hello, I'm Mauli Patel</h1>
+            <p>Welcome to my portfolio! I am a Data Science enthusiast.</p>
+        </div>
     </section>
 
-    <!-- about section design -->
     <section class="about" id="about">
-        <!-- About section content remains the same -->
+        <h2 class="heading">About Me</h2>
+        <p>I am passionate about data science and analytics. My goal is to leverage data to solve real-world problems.</p>
     </section>
 
-    <!-- education section design -->
     <section class="education" id="education">
-        <h2 class="heading">My <span>Journey</span><span class="animate scroll" style="--i:1;"></span></h2>
-
-        <div class="education-row">
-            <div class="education-column">
-                <h3 class="title">Education<span class="animate scroll" style="--i:2;"></span></h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> Jun 2024 - Jun 2026</div>
-                            <h3>Master of Science in Big Data and Analytics</h3>
-                            <p>St. Xavier's College, Ahmedabad</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> Aug 2021 - Apr 2024</div>
-                            <h3>Bachelor of Science in Information Technology</h3>
-                            <p>GLS University, Ahmedabad</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="education-column">
-                <h3 class="title">Experience<span class="animate scroll" style="--i:5;"></span></h3>
-
-                <div class="education-box">
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> Mar 2024 - Present</div>
-                            <h3>Founder & Content Creator - Tech Data Hub</h3>
-                            <p>Established Tech Data Hub to deliver data science resources, amassing over 260 followers.</p>
-                        </div>
-                    </div>
-
-                    <div class="education-content">
-                        <div class="content">
-                            <div class="year"><i class='bx bxs-calendar'></i> Oct 2024 - Present</div>
-                            <h3>Program Participant - Infosys Springboard</h3>
-                            <p>Participated in a 12-week mentorship program for women in technology.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- skills section design -->
-    <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-
-        <div class="skills-row">
-            <!-- Programming & Data Science Skills Column -->
-            <div class="skills-column">
-                <h3 class="title">Programming & Data Science</h3>
-                <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>Python <span>90%</span></h3>
-                            <div class="bar"><span style="width: 90%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>SQL <span>85%</span></h3>
-                            <div class="bar"><span style="width: 85%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Machine Learning <span>80%</span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Data Visualization <span>75%</span></h3>
-                            <div class="bar"><span style="width: 75%;"></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Tools & Technical Skills Column -->
-            <div class="skills-column">
-                <h3 class="title">Data Tools & Technical Skills</h3>
-                <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>Pandas <span>85%</span></h3>
-                            <div class="bar"><span style="width: 85%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>NumPy <span>80%</span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Jupyter Notebook <span>75%</span></h3>
-                            <div class="bar"><span style="width: 75%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Git Version Control <span>70%</span></h3>
-                            <div class="bar"><span style="width: 70%;"></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional Skills Row -->
-        <div class="skills-row">
-            <!-- Leadership & Soft Skills Column -->
-            <div class="skills-column">
-                <h3 class="title">Leadership & Soft Skills</h3>
-                <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>Project Management <span>80%</span></h3>
-                            <div class="bar"><span style="width: 80%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Team Leadership <span>75%</span></h3>
-                            <div class="bar"><span style="width: 75%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Problem Solving <span>85%</span></h3>
-                            <div class="bar"><span style="width: 85%;"></span></div>
-                        </div>
-                    </div>
-                                    </div>
-            </div>
-
-            <!-- Additional Technical Skills Column -->
-            <div class="skills-column">
-                <h3 class="title">Additional Technical Skills</h3>
-                <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>DBMS <span>75%</span></h3>
-                            <div class="bar"><span style="width: 75%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>NoSQL <span>70%</span></h3>
-                            <div class="bar"><span style="width: 70%;"></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Oracle Database <span>65%</span></h3>
-                            <div class="bar"><span style="width: 65%;"></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- projects section design -->
-    <section class="projects" id="projects">
-        <h2 class="heading">My <span>Projects</span></h2>
-
-        <div class="projects-row">
-            <div class="project-column">
-                <h3>Online Payment Fraud Detection</h3>
-                <p>Developed a machine learning model to accurately identify fraudulent transactions using Random Forest.</p>
-            </div>
-            <div class="project-column">
-                <h3>Data Science Jobs Salaries Dashboard</h3>
-                <p>Created an interactive Tableau dashboard to explore trends in data science job salaries.</p>
-            </div>
-            <div class="project-column">
-                <h3>Online Payment Fraud Detection Dashboard</h3>
-                <p>Developed a Tableau dashboard to analyze online payment data and enhance fraud detection capabilities.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- certificates section design -->
-    <section class="certificates" id="certificates">
-        <h2 class="heading">My <span>Certificates</span></h2>
-
+        <h2 class="heading">My Journey</h2>
+        <h3>Education</h3>
         <ul>
-            <li>TATA Crucible Campus Quiz 2024 – Certificate of Participation</li>
-            <li>Data Science Job Simulation – BCG, Forage</li>
-            <li>Data Fundamentals – IBM</li>
-            <li>Data Science Certification – Great Learning</li>
-            <li>Core Concepts in Data Analytics Quiz – Certificate of Participation</li>
-            <li>Nestlé E-Learning Certification – Certificate of Participation</li>
+            <li>Master of Science in Big Data and Analytics, St. Xavier's College, Ahmedabad (Jun 2024 - Jun 2026)</li>
+            <li>Bachelor of Science in Information Technology, GLS University, Ahmedabad (Aug 2021 - Apr 2024)</li>
+        </ul>
+        <h3>Experience</h3>
+        <ul>
+            <li>Founder & Content Creator - Tech Data Hub (Mar 2024 - Present)</li>
+            <li>Program Participant - Infosys Springboard (Oct 2024 - Present)</li>
         </ul>
     </section>
 
-    <!-- contact section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Get in <span>Touch</span></h2>
+    <section class="skills" id="skills">
+        <h2 class="heading">My Skills</h2>
+        <ul>
+            <li>Python - 90%</li>
+            <li>SQL - 85%</li>
+            <li>Machine Learning - 80%</li>
+            <li>Data Visualization - 75%</li>
+        </ul>
+    </section>
 
+    <section class="projects" id="projects">
+        <h2 class="heading">My Projects</h2>
+        <ul>
+            <li><a href="https://public.tableau.com/app/profile/dataqueenmauli/vizzes" target="_blank">Online Payment Fraud Detection</a></li>
+            <li><a href="https://public.tableau.com/app/profile/dataqueenmauli/vizzes" target="_blank">Data Science Jobs Salaries Dashboard</a></li>
+            <li><a href="https://public.tableau.com/app/profile/dataqueenmauli/vizzes" target="_blank">Online Payment Fraud Detection Dashboard</a></li>
+        </ul>
+    </section>
+
+    <section class="certificates" id="certificates">
+        <h2 class="heading">My Certificates</h2>
+        <ul>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">TATA Crucible Campus Quiz 2024 – Certificate of Participation</a></li>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">Data Science Job Simulation – BCG, Forage</a></li>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">Data Fundamentals – IBM</a></li>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">Data Science Certification – Great Learning</a></li>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">Core Concepts in Data Analytics Quiz – Certificate of Participation</a></li>
+            <li><a href="https://drive.google.com/file/d/FILE_ID/view" target="_blank">Nestlé E-Learning Certification – Certificate of Participation</a></li>
+        </ul>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Get in Touch</h2>
         <form action="#">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
@@ -245,7 +94,6 @@
         </form>
     </section>
 
-    <!-- footer section design -->
     <footer class="footer">
         <p>&copy; 2024 Mauli Patel. All rights reserved.</p>
         <div class="socials">
